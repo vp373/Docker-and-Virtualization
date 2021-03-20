@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Connect Docker with PyCharm</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: FlexStart - v1.1.1
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <span>Docker and Virtualization</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="virtualization.html">Virtualization</a></li>
+          <li><a class="nav-link" href="containerization.html">Containerization</a></li>
+          <li><a class="nav-link" href="comparison.html">Virtualization vs Containerization</a></li>
+          <li><a class="nav-link" href="docker.html">Docker</a></li>
+          <li><a class="nav-link" href="linux.html">Linux</a></li>
+          <li><a class="nav-link active" href="python.html">Python</a></li>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Tutorial</li>
+        </ol>
+        <h2>How to connect docker with pycharm to write python code</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+
+<p><strong>Introduction</strong></p>
+<p>PyCharm integration with&nbsp;<a href="https://www.jetbrains.com/help/pycharm/docker.html">Docker</a>&nbsp;allows you to run your applications in the variously configured development environments deployed in Docker containers.</p>
+<p>&nbsp;</p>
+<p><strong>Prerequisites</strong></p>
+<p>Make sure that the following prerequisites are met:</p>
+<ul>
+<li>Docker is installed, as described on the page&nbsp;<a href="https://docs.docker.com/">Docker Docs</a>. You can install Docker on the various platforms, but here we'll use the&nbsp;<a href="https://docs.docker.com/docker-for-windows/">Windows</a>&nbsp;installation.</li>
+</ul>
+<p>Note that you might want to repeat this tutorial on different platforms; then use Docker installations for&nbsp;<a href="https://docs.docker.com/docker-for-mac/">macOS</a>&nbsp;and&nbsp;<a href="https://docs.docker.com/engine/installation/linux/ubuntu/">Linux</a>&nbsp;(Ubuntu, other distributions-related instructions are available as well).</p>
+<ul>
+<li>You have a stable Internet connection.</li>
+</ul>
+<p>Ensure that you have a stable Internet connection, so that PyCharm can download and run&nbsp;busybox:latest. Once you have successfully configured Docker, you can go offline.</p>
+<ul>
+<li>Before you start working with Docker, make sure that the&nbsp;<strong>Docker</strong>&nbsp;plugin is enabled. The plugin is bundled with PyCharm and is activated by default. If the plugin is not activated, enable it on the&nbsp;<a href="https://www.jetbrains.com/help/pycharm/plugins-settings.html">Plugins</a>&nbsp;page of the&nbsp;<strong>Settings/Preferences</strong>&nbsp;dialog&nbsp;Ctrl+Alt+S&nbsp;as described in&nbsp;<a href="https://www.jetbrains.com/help/pycharm/managing-plugins.html">Manage plugins</a>.</li>
+</ul>
+<p>If you are using Docker for Windows, enable the&nbsp;<strong>Expose daemon on tcp://localhost:2375 without TLS</strong>&nbsp;option in the&nbsp;<strong>General</strong>&nbsp;section of your Docker settings.</p>
+<ul>
+<li>Also, for Windows, right-click the Docker whale icon, choose Settings from the context menu, and in the General page select the&nbsp;<strong>Expose daemon...</strong>&nbsp;checkbox:</li>
+</ul>
+        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/1.png" class="card-img" alt="...">
+          </div>
+<p>Note that you cannot install any Python packages into Docker-based project interpreters.</p>
+<p>&nbsp;</p>
+<p><strong>Preparing an example</strong></p>
+<p>Create a Python project&nbsp;QuadraticEquation, add the&nbsp;<strong>Solver.py</strong>&nbsp;file and enter the following code:</p>
+<p><strong>import</strong> math</p>
+<p><strong>class</strong> Solver:</p>
+<p>&nbsp;&nbsp;&nbsp; <strong>def</strong> demo(self, a, b, c):</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d = b ** 2 - 4 * a * c</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>if</strong> d &gt; 0:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; disc = math.sqrt(d)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; root1 = (-b + disc) / (2 * a)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; root2 = (-b - disc) / (2 * a)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>return</strong> root1, root2</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>elif</strong> d == 0:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>return</strong> -b / (2 * a)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>else</strong>:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>return</strong> <strong>"This equation has no roots"</strong></p>
+<p><strong>if</strong> __name__ == <strong>'__main__'</strong>:</p>
+<p>&nbsp;&nbsp;&nbsp; solver = Solver()</p>
+<p>&nbsp;&nbsp;&nbsp; <strong>while</strong> True:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a = int(input(<strong>"a: "</strong>))</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b = int(input(<strong>"b: "</strong>))</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c = int(input(<strong>"c: "</strong>))</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; result = solver.demo(a, b, c)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>print</strong>(result)</p>
+<p>&nbsp;</p>
+<p><strong>Configuring Docker as a remote interpreter</strong></p>
+<p>Now that we've prepared our example, let's define a Docker-based remote interpreter.</p>
+<p>Ensure that you have downloaded and installed&nbsp;<a href="https://www.python.org/downloads/">Python</a>&nbsp;on your computer.</p>
+<p>Open the&nbsp;<strong>Add Python Interpreter</strong>&nbsp;dialog by either way:</p>
+<ul>
+<li>When you're in the&nbsp;<strong>Editor</strong>, the most convenient way is to use the&nbsp;<strong>Python Interpreter</strong>&nbsp;widget in the&nbsp;<a href="https://www.jetbrains.com/help/pycharm/guided-tour-around-the-user-interface.html#python-interpreter-widget">Overview of the user interface</a>. Click the widget and select&nbsp;<strong>Add Interpreter ...</strong></li>
+<li>If you are in the&nbsp;<strong>Settings/Preferences</strong>&nbsp;dialog&nbsp;Ctrl+Alt+S, select&nbsp;<strong>Project &lt;project name&gt; | Python Interpreter</strong>. Click the&nbsp;&nbsp;icon and select&nbsp;<strong>Add</strong>.</li>
+</ul>
+<p>In the dialog that opens, select the&nbsp;<strong>Docker</strong>&nbsp;option, from the drop-down lists select the Docker server (if the server is missing, click&nbsp;<strong>New...</strong>&nbsp;), and specify the image name.</p>
+<p>Python interpreter path should have the default value:</p>
+        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/2.png" class="card-img" alt="...">
+          </div>
+<p>As a result, in the Settings dialog, you should see something like this:</p>
+        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/3.png" class="card-img" alt="...">
+          </div>
+<p>Click&nbsp;<strong>OK</strong>&nbsp;to apply changes and close the dialog.</p>
+<p>&nbsp;</p>
+<p><strong>Running your application in a Docker container</strong></p>
+<p>In the left gutter, next to the&nbsp;main&nbsp;clause, click the&nbsp;&nbsp;button, and choose&nbsp;<strong>Run 'Solver.py'</strong>&nbsp;command. You see that your script runs in the Docker container:</p>
+        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/4.png" class="card-img" alt="...">
+          </div>
+<p>As you can see, the prefix in the Run tool window shows the container ID.</p>
+<p>&nbsp;</p>
+<p><strong>Debugging your application in a Docker container</strong></p>
+<p>Next, let's debug our application. For that, let's put a breakpoint on the line that calculates&nbsp;d, then click&nbsp;&nbsp;and choose&nbsp;<strong>Debug 'Solver'</strong>.</p>
+<p>As you see in the Console tab of the Debug tool window, the debugger runs also in the Docker container:</p>
+<div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/5.png" class="card-img" alt="...">
+          </div>
+        <p>But now this container has a different id, and hence - different name. You can see it in the Terminal: type the&nbsp;docker ps&nbsp;command and see the container id and name:</p>
+        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/6.png" class="card-img" alt="...">
+          </div>
+<p>It's important that PyCharm creates a new container, when an application is executed in any way. Whether it's running, debugging, running with coverage, testing - each execution requires a new container!</p>
+<p>&nbsp;</p>
+<p><strong>Docker tool window</strong></p>
+<p>But is it possible to see all the containers without the Terminal? PyCharm says - yes. You can use the&nbsp;<strong>Docker</strong>&nbsp;tab in the&nbsp;<a href="https://www.jetbrains.com/help/pycharm/services-tool-window.html">Services</a>&nbsp;tool window as the UI for the Docker command-line client.</p>
+<p>If you have configured Docker as a remote interpreter, you will see the&nbsp;<strong>Services</strong>&nbsp;tool window button at the bottom side of the main PyCharm window. Click this button and see the docker containers:</p>
+<div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/7.png" class="card-img" alt="...">
+          </div>
+        <p>Let's look at this tool window more attentively. What do we see here?</p>
+<ul>
+<li>First, we are connected to a Docker daemon:</li>
+  <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/8.png" class="card-img" alt="...">
+          </div>
+</ul>
+<ul>
+<li>Second, if we open the Run tool window, we'll see that the Docker prefix corresponds to the container ID in the Properties tab of the Docker tool window:</li>
+<div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/9.png" class="card-img" alt="...">
+          </div>
+</ul>
+<ul>
+<li>Third, if we open the Debug tool window, we'll see that the Docker prefix (another one!) corresponds to the another container ID in the Properties tab of the Docker tool window:</li>
+<div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/10.png" class="card-img" alt="...">
+          </div>
+</ul>
+<ul>
+<li>And finally, we see the strange names of the containers - they are human-readable and generated by Docker itself.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Summary</strong></p>
+<p>Let's summarize what has been done with the help of PyCharm:</p>
+<ul>
+<li>We created a project and added a Python script.</li>
+<li>We configured the remote interpreter.</li>
+<li>We ran and debugged our script in the Docker containers.</li>
+<li>Finally, we launched the Docker tool window and saw all the details visible in the Terminal.</li>
+</ul>
+<p>&nbsp;</p>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
