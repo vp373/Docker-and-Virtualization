@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Containerization</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: FlexStart - v1.1.1
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <span>Docker and Virtualization</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="virtualization.html">Virtualization</a></li>
+          <li><a class="nav-link" href="containerization.html">Containerization</a></li>
+          <li><a class="nav-link active" href="comparison.html">Virtualization vs Containerization</a></li>
+          <li><a class="nav-link" href="docker.html">Docker</a></li>
+          <li><a class="nav-link" href="linux.html">Linux</a></li>
+          <li><a class="nav-link" href="python.html">Python</a></li>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Comparison</li>
+        </ol>
+        <h2>Comparison</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+  <div class="col-sm" data-aos="zoom-in" data-aos-delay="50">
+    <section class="inner-page">
+      <div class="container">
+          <p><span style="font-weight: 400;">Before cloud computing, machines all came with their own OS installed on them which led to their programs breaking and more downtime. Virtual machines run on top of just the hardware and a hypervisor. This means that the software running on a VM is running on a guest OS which means that there&rsquo;s less of a chance breaking than if it was running on the host OS.&nbsp;</span></p>
+          <p>There was still an issue with VM&rsquo;s however; Running multiple guest OSs took up a lot of resources. This is the problem that containerization solves for. Rather than coming with a guest OS, containers use runtime engines to share the host of any machine it is running on. This ensures maximal efficiency and speed. VM&rsquo;s might typically need 4-8GB to run well, but container images are often less than 100 MB.&nbsp;</p>
+            <div class="container col-lg-6 hero-img my-4" data-aos="zoom-out" data-aos-delay="200">
+              <img src="assets/img/vmc.png" class="img-fluid" alt="">
+            </div>
+          <p>The image show above is a very good summarization of what virtualization is compared to containerization.</p>
+          <p>This may be a tough concept to grasp and it was crucial that we read multiple articles and tried to approach this from all different angle to make sure we understood it. Here are the resources that we used and that you can utilize as well!</p>
+          <ul>
+            <li><a href="https://www.docker.com/resources/what-container">https://www.docker.com/resources/what-container</a></li>
+            <li><a href="https://www.cloudmanagementinsider.com/containerization-vs-virtualization/">https://www.cloudmanagementinsider.com/containerization-vs-virtualization/</a></li>
+            <li><a href="https://www.burwood.com/blog-archive/containerization-vs-virtualization">https://www.burwood.com/blog-archive/containerization-vs-virtualization</a></li>
+            <li><a href="https://www.liquidweb.com/kb/virtualization-vs-containerization/">https://www.liquidweb.com/kb/virtualization-vs-containerization/</a></li>
+            <li><a href="https://www.ibm.com/cloud/blog/containers-vs-vms">https://www.ibm.com/cloud/blog/containers-vs-vms</a></li>
+            <li><a href="https://www.redhat.com/en/topics/containers/containers-vs-vms">https://www.redhat.com/en/topics/containers/containers-vs-vms</a></li>
+            <li><a href="https://www.hitechnectar.com/blogs/containerization-vs-virtualization/">https://www.hitechnectar.com/blogs/containerization-vs-virtualization/</a></li>
+          </ul>
+      </div>
+    </section>
+  </div>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
