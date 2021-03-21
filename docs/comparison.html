@@ -5,10 +5,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Virtualization</title>
+  <title>Containerization</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -44,9 +43,9 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link" href="index.html">Home</a></li>
-          <li><a class="nav-link active" href="virtualization.html">Virtualization</a></li>
+          <li><a class="nav-link" href="virtualization.html">Virtualization</a></li>
           <li><a class="nav-link" href="containerization.html">Containerization</a></li>
-          <li><a class="nav-link" href="comparison.html">Virtualization vs Containerization</a></li>
+          <li><a class="nav-link active" href="comparison.html">Virtualization vs Containerization</a></li>
           <li><a class="nav-link" href="docker.html">Docker</a></li>
           <li><a class="nav-link" href="linux.html">Linux</a></li>
           <li><a class="nav-link" href="python.html">Python</a></li>
@@ -64,45 +63,37 @@
 
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Virtualization</li>
+          <li>Comparison</li>
         </ol>
-        <h2>Virtualization</h2>
+        <h2>Comparison</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
-  <div class="col-sm" data-aos="zoom-in" data-aos-delay="100">
+  <div class="col-sm" data-aos="zoom-in" data-aos-delay="50">
     <section class="inner-page">
       <div class="container">
-          <p><span style="font-weight: 400;">Simply put, virtualization is using a single machine&rsquo;s hardware to run multiple virtual machines within it. Virtualization helps solve the problem of underutilized resources between the hardware and the user. VM&rsquo;s still need all of the same computing resources as a computer. Each VM still requires a certain allocation of the physical hardware&rsquo;s CPU, RAM,and storage. Thus the total CPU, RAM, and storage of the individual VM&rsquo;s cannot exceed the specs of the underlying hardware.&nbsp;</span></p>
-
-            <p><span style="font-weight: 400;">For instance, previously companies used to have 4 physical servers; one mail server, one web server, and another two servers to run an application on. They each run at 25% capacity which was only a quarter of its full potential. It was not always easy for one server to perform 3 different functions, but that is what virtualization solved for. It is the same physical hardware, but now it is just utilized more efficiently</span></p>
-            <p><span style="font-weight: 400;">Benefits of virtualization include the following:</span></p>
-
-            <ol>
-              <li style="font-weight: 400;"><span style="font-weight: 400;">&nbsp;increased manageability because you have the ability to move, copy, or isolate VM&rsquo;s</span></li>
-              <li style="font-weight: 400;"><span style="font-weight: 400;">Increased sustainability due to the energy savings from running less hardware and using less electricity</span></li>
-              <li style="font-weight: 400;"><span style="font-weight: 400;">Increased availability&nbsp; in order to snapshot, clone, and run redundant VM&rsquo;s</span></li>
-              <li style="font-weight: 400;"><span style="font-weight: 400;">And increased security due to the isolation of the VM&rsquo;s and various applications</span></li>
-            </ol>
-            <p><span style="font-weight: 400;">The picture below is a great depiction of what virtualization looks like. On top of your physical hardware you have a hypervisor. On top of this you have your virtual machines with their own guest operating systems. Finally, on top of all of these layers is your application.</span></p>
-          <div class="container d-flex  my-4" data-aos="zoom-out" data-aos-delay="50">
-            <img src="assets/img/Virt.jpg" class="img-fluid" alt="">
-          </div>
-        <p>Here are some links which we used in our journey to grasp the concept of virtualization better:</p>
+          <p><span style="font-weight: 400;">Before cloud computing, machines all came with their own OS installed on them which led to their programs breaking and more downtime. Virtual machines run on top of just the hardware and a hypervisor. This means that the software running on a VM is running on a guest OS which means that there&rsquo;s less of a chance breaking than if it was running on the host OS.&nbsp;</span></p>
+          <p>There was still an issue with VM&rsquo;s however; Running multiple guest OSs took up a lot of resources. This is the problem that containerization solves for. Rather than coming with a guest OS, containers use runtime engines to share the host of any machine it is running on. This ensures maximal efficiency and speed. VM&rsquo;s might typically need 4-8GB to run well, but container images are often less than 100 MB.&nbsp;</p>
+            <div class="container col-lg-6 hero-img my-4" data-aos="zoom-out" data-aos-delay="200">
+              <img src="assets/img/vmc.png" class="img-fluid" alt="">
+            </div>
+          <p>The image show above is a very good summarization of what virtualization is compared to containerization.</p>
+          <p>This may be a tough concept to grasp and it was crucial that we read multiple articles and tried to approach this from all different angle to make sure we understood it. Here are the resources that we used and that you can utilize as well!</p>
           <ul>
-          <li><a href="https://opensource.com/resources/virtualization#:~:text=Virtualization%20is%20the%20process%20of,on%20a%20computer%20system%20simultaneously">https://opensource.com/resources/virtualization#:~:text=Virtualization%20is%20the%20process%20of,on%20a%20computer%20system%20simultaneously</a>.</li>
-          <li><a href="https://www.redhat.com/en/topics/virtualization/what-is-virtualization">https://www.redhat.com/en/topics/virtualization/what-is-virtualization</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/Virtualization">https://en.wikipedia.org/wiki/Virtualization</a></li>
-          <li><a href="https://www.vmware.com/solutions/virtualization.html">https://www.vmware.com/solutions/virtualization.html</a></li>
-          <li><a href="https://www.ibm.com/cloud/learn/virtualization-a-complete-guide">https://www.ibm.com/cloud/learn/virtualization-a-complete-guide</a></li>
-          <li><a href="https://www.nutanix.com/info/virtualization">https://www.nutanix.com/info/virtualization</a></li>
+            <li><a href="https://www.docker.com/resources/what-container">https://www.docker.com/resources/what-container</a></li>
+            <li><a href="https://www.cloudmanagementinsider.com/containerization-vs-virtualization/">https://www.cloudmanagementinsider.com/containerization-vs-virtualization/</a></li>
+            <li><a href="https://www.burwood.com/blog-archive/containerization-vs-virtualization">https://www.burwood.com/blog-archive/containerization-vs-virtualization</a></li>
+            <li><a href="https://www.liquidweb.com/kb/virtualization-vs-containerization/">https://www.liquidweb.com/kb/virtualization-vs-containerization/</a></li>
+            <li><a href="https://www.ibm.com/cloud/blog/containers-vs-vms">https://www.ibm.com/cloud/blog/containers-vs-vms</a></li>
+            <li><a href="https://www.redhat.com/en/topics/containers/containers-vs-vms">https://www.redhat.com/en/topics/containers/containers-vs-vms</a></li>
+            <li><a href="https://www.hitechnectar.com/blogs/containerization-vs-virtualization/">https://www.hitechnectar.com/blogs/containerization-vs-virtualization/</a></li>
           </ul>
       </div>
     </section>
   </div>
   </main><!-- End #main -->
 
- <!-- ======= Footer ======= -->
+  <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright">

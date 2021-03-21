@@ -9,9 +9,6 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -69,54 +66,76 @@
           <li><a href="index.html">Home</a></li>
           <li>Tutorial</li>
         </ol>
-        <h2>How to setup a web server on your local computer using docker</h2>
+        <h2>How to Setup a Web Server on Your Local Computer Using Docker</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
 
     <section class="inner-page">
       <div class="container">
-        <p>In this tutorial by professor <span style="text-decoration: underline;"><strong><a class="yt-simple-endpoint style-scope yt-formatted-string" dir="auto" spellcheck="false" href="https://www.youtube.com/channel/UCSOm2zK1tPb3DyUqYR36Xag">Keith Williams</a></strong></span>, you will learn how to use predefined environments (Docker) to support a website, as well as basic skills of the command line. You need to finish all the assignments, and the tutorials listed below can guide you. Take screenshots of the results as the proof of your achievements.</p>
-<p>Why should you learn about Docker?</p>
+        <p>In this tutorial by Professor <span style="text-decoration: underline;"><strong><a class="yt-simple-endpoint style-scope yt-formatted-string" dir="auto" spellcheck="false" href="https://www.youtube.com/channel/UCSOm2zK1tPb3DyUqYR36Xag">Keith Williams</a></strong></span>, you will learn how to use predefined environments (Docker) to support a website, as well as basic skills of the command line. You need to finish all the assignments, and the tutorials listed below can guide you. Take screenshots of the results as the proof of your achievements.</p>
+          <p><b>Why should you learn about Docker?</b></p>
 <p>Many developers are struggling with the deployment of their programs. Sometimes it is easy to deliver a program, but to deliver the running environment for that program is not that easy. Docker is the delivery of environments, and we can also use these predefined environments to run specific programs, such as Ubuntu and Apache (a server end program). Docker is a sort of flexible &ldquo;virtual machine&rdquo;, providing the minimum environment for your programs, and the environment has little relationship with the host/local physical machine.</p>
-<p>Why should you learn about command line?</p>
+<p><b>Why should you learn about command line?</b></p>
 <p>In most occasions of maintaining servers, there is no Graph User Interface (GUI), and the command line is the only way to interact with the server and the programs. So developers need to learn command line. In addition, the command line is efficient for professionals who need to conduct similar operations many times. For example, in Ubuntu, you can use &ldquo;ls&rdquo; to list files in the current directory, and use &ldquo;cd&rdquo; to change the present working directory. In vi, &ldquo;q&rdquo; command is used to quit the current file.</p>
 <p><span style="text-decoration: underline;">Tutorial resources and key steps: </span></p>
 <p><em>1. Install Docker Engine</em></p>
 <p><a href="https://docs.docker.com/engine/install/ ">https://docs.docker.com/engine/install/ </a></p>
 <p><a href="https://docs.docker.com/get-docker/ ">https://docs.docker.com/get-docker/ </a></p>
 <p>Key-step: After the installation, you can run &ldquo;docker run hello-world&rdquo; to test your installation. Below is a screenshots when run this command successfully on Windows OS.</p>
-          <img src="images/Picture1.jpg" class="card-img" alt="...">
+            <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture1.jpg" class="card-img" alt="...">
+          </div>
         <p><em>2. Pull an Ubuntu image from Dockerhub. </em></p>
 <p><a href="https://docs.docker.com/engine/reference/commandline/pull/ ">https://docs.docker.com/engine/reference/commandline/pull/ </a></p>
 <p>Key-step 1: After logging into Docker, you can run &ldquo;docker pull ubuntu&rdquo; in your command line window.</p>
-          <img src="images/Picture2.jpg" class="card-img" alt="...">
+            <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture2.jpg" class="card-img" alt="...">
+          </div>
         <p>Key-step 2: Use &ldquo;docker images&rdquo; to check existing Docker images on your computer.</p>
-                  <img src="images/Picture3.jpg" class="card-img" alt="...">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture3.jpg" class="card-img" alt="...">
+          </div>
 <p><em>3. How To Commit Changes To A Docker Image With Examples</em></p>
 <p><a href="https://phoenixnap.com/kb/how-to-commit-changes-to-docker-image ">https://phoenixnap.com/kb/how-to-commit-changes-to-docker-image </a></p>
 <p>Note: Parameter &ldquo;-it&rdquo; of Docker brings you an interactive shell to communicate with the &ldquo;virtual machine&rdquo;.</p>
 <p>Key-step 1: Run the Ubuntu image to start a Docker container, then log into this Ubuntu container:</p>
 <p>Command: docker run -it ubuntu:latest /bin/bash</p>
-                  <img src="images/Picture4.jpg" class="card-img" alt="...">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture4.jpg" class="card-img" alt="...">
+          </div>
 <p>The container ID is &ldquo;1ee65e9d5595&rdquo; in the screenshot.</p>
 <p>Key-step 2: Install applications in this Ubuntu container.</p>
 <p>1) Update system using&ldquo;apt-get update&rdquo;.</p>
-                  <img src="images/Picture5.jpg" class="card-img" alt="...">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture5.jpg" class="card-img" alt="...">
+          </div>
 <p>2) Install apache2 using &ldquo;apt-get install apache2&rdquo;.</p>
-                  <img src="images/Picture6.jpg" class="card-img" alt="...">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture6.jpg" class="card-img" alt="...">
+          </div>
 <p>3) Install vim text editor using &ldquo;apt-get install vim&rdquo;.</p>
-                  <img src="images/Picture7.jpg" class="card-img" alt="...">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture7.jpg" class="card-img" alt="...">
+          </div>
 <p>Key-step 3:Exit Ubuntu container.</p>
 <p>1) Use command &ldquo;exit&rdquo;.</p>
-                  <img src="images/Picture8.jpg" class="card-img" alt="...">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture8.jpg" class="card-img" alt="...">
+          </div>
 <p>Key-step 4: Commit container to create a new Docker image.</p>
 <p>1) Check the container using &ldquo;docker ps -a&rdquo;</p>
-                  <img src="images/Picture9.jpg" class="card-img" alt="...">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture9.jpg" class="card-img" alt="...">
+          </div>
 <p>2) Create a new Docker image using &ldquo;docker commit 1ee65e9d5595 ubuntu-my_apache2&rdquo;. &ldquo;1ee65e9d5595&rdquo; is the container ID and &ldquo;ubuntu-my_apache2&rdquo; is the name of a new Docker image.</p>
-          <img src="images/Picture10.jpg" class="card-img" alt="...">
+            <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture10.jpg" class="card-img" alt="...">
+          </div>
         <p>3) Check the news images using &ldquo;docker images&rdquo;.</p>
-                  <img src="images/Picture11.jpg" class="card-img" alt="...">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture11.jpg" class="card-img" alt="...">
+          </div>
 <p><em>4. Docker Basics: How to Share Data Between a Docker Container and Host</em></p>
 <p><a href="https://thenewstack.io/docker-basics-how-to-share-data-between-a-docker-container-and-host/">https://thenewstack.io/docker-basics-how-to-share-data-between-a-docker-container-and-host/</a></p>
 <p>Using command &ldquo;docker run -it -p 127.0.0.1:80:80 -v H:\Docker_tutorial\local_dir:/var/www/html ubuntu-my_apache2 /bin/bash&rdquo;.</p>
@@ -124,18 +143,28 @@
 <p>1) -it: log into an interactive shell</p>
 <p>2) -p: expose an port of Docker container.</p>
 <p>3) -v: bind a host directory to Docker container. &ldquo;H:\Docker_tutoiral\local_dir&rdquo; is a directory of the host computer, and &ldquo;/var/www/htm&rdquo; is the default location for the entry webpage of a website. Usually we put &ldquo;index. Html&rdquo; is this directory.</p>
-          <img src="images/Picture12.jpg" class="card-img" alt="...">
+            <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture12.jpg" class="card-img" alt="...">
+          </div>
         <p><em>5. vi Editor in UNIX</em></p>
 <p><a href="https://www.geeksforgeeks.org/vi-editor-unix/ ">https://www.geeksforgeeks.org/vi-editor-unix/ </a></p>
 <p>Vi index.html</p>
 <p>Key step 1: check the present working directory using &ldquo;pwd&rdquo; then go the html directory &ldquo;/var/www/htm&rdquo; using &ldquo;cd /var/www/html&rdquo;</p>
-          <img src="images/Picture13.jpg" class="card-img" alt="...">
+            <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture13.jpg" class="card-img" alt="...">
+          </div>
         <p>Key step 2: create an &ldquo;index.html&rdquo; file using &ldquo;vi index.html&rdquo;. Press &ldquo;i&rdquo; key to edit the new &ldquo;index. Html&rdquo; file. You can see &ldquo;-- INSERT --&rdquo; in the bottom of the command window, which means you can type html source code now. Try the shortcuts of vi to edit your file.</p>
-          <img src="images/Picture14.jpg" class="card-img" alt="...">
+            <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture14.jpg" class="card-img" alt="...">
+          </div>
         <p>After finishing your &ldquo;index.html&rdquo; file, press the &ldquo;ESC&rdquo; key of your computer then type &ldquo;:wq&rdquo; to write the file and then quit vi.</p>
-          <img src="images/Picture15.jpg" class="card-img" alt="...">
+            <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture15.jpg" class="card-img" alt="...">
+          </div>
         <p>Meanwhile, you can find your &ldquo;index.html&rdquo; in your bind directory on your computer.</p>
-                  <img src="images/Picture16.jpg" class="card-img" alt="...">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture16.jpg" class="card-img" alt="...">
+          </div>
 <p><em>6. How to use Docker to host a website.</em></p>
 <p>1) How To Start, Stop, Or Restart Apache Server On Ubuntu</p>
 <p><a href="https://phoenixnap.com/kb/ubuntu-start-stop-restart-apache ">https://phoenixnap.com/kb/ubuntu-start-stop-restart-apache </a></p>
@@ -144,16 +173,20 @@
 <p>3) Learn Docker in 12 Minutes</p>
 <p><a href="https://www.youtube.com/watch?v=YFl2mCHdv24 ">https://www.youtube.com/watch?v=YFl2mCHdv24 </a></p>
         <p>Key step 1: Start apache service using &ldquo;/etc/init.d/apache2 restart&rdquo; in your Docker container.</p>
+              <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
             <img src="images/Picture17.jpg" class="card-img" alt="...">
+          </div>
   <p>Using a browser of you host computer to access &ldquo;127.0.0.1&rdquo;, then you can see your website!</p>
-                  <img src="images/Picture18.jpg" class="card-img" alt="...">
+                  <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="images/Picture18.jpg" class="card-img" alt="...">
+          </div>
       </div>
     </section>
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-
+  <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
